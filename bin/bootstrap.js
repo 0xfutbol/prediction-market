@@ -1,15 +1,16 @@
-const path = require('path')
-const modPath = require('app-module-path')
+import { register } from '@babel/register';
+import { addPath } from 'app-module-path';
+import path from 'path';
 
 const modules = [
   '',
   'local_modules',
-]
+];
 
 modules.forEach((modulePath) => {
-  modPath.addPath(path.join(process.cwd(), modulePath))
-})
+  addPath(path.join(process.cwd(), modulePath));
+});
 
-require('@babel/register')({
-  extensions: [ '.js', '.ts', '.tsx' ],
-})
+register({
+  extensions: ['.js', '.ts', '.tsx'],
+});
