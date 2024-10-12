@@ -1,2 +1,2 @@
-import '../bootstrap'
-import './icons'
+require('../bootstrap')
+require('./icons')
